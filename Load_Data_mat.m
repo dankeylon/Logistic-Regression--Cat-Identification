@@ -3,7 +3,8 @@ function [train_set_x, train_set_y, test_set_x, test_set_y] = Load_Data_mat()
 %the 4 data sets train_set_x, train_set_y, test_set_x, test_set_y
 %which were created in the Ipython notebook using scipy.io.savemat.
 
-filepath = 'C:\Users\Gothmog\Google Drive\Code Projects\Matlab\Deep Learning-Cat Identification\data_sets.mat';
+%filepath = 'C:\Users\Gothmog\Google Drive\Code Projects\Matlab\Logistic Regression-Cat ID';
+filepath = 'data_sets.mat';
 load(filepath);
 
 %train_set_y = train_set_y';

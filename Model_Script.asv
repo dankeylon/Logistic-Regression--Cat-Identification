@@ -1,6 +1,5 @@
 clear
-%Collection of Matlab commands to set up the Machine Learning Problem
-%And collect the results.
+
 [train_set_x_orig, train_set_y, test_set_x_orig, test_set_y] = Load_Data_mat();
 
 size_train = size(train_set_x_orig);
@@ -8,7 +7,7 @@ size_test = size(test_set_x_orig);
 
 [m_train, m_test, num_px] = Get_Dims(train_set_x_orig, train_set_y, test_set_x_orig, test_set_y);
 
-%Recovers an image from the train set; Change index for new picture
+%Recovers an image from the data 
 % index = 15;
 % Get_Imag(train_set_x_orig,index);
 

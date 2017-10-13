@@ -18,7 +18,7 @@ function [grads, cost] = Propagate(w, b, X, Y)
 m = size(X, 2);
 
 %Forward propagation
-A = double(Sigmoid(w' * X + b));
+A = Sigmoid(w' * X + b);
 cost = (-1/m) * sum((Y * log(A') + (1 - Y) * log(1 - A')));
 
 %Backward propagation

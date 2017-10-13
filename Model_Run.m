@@ -16,6 +16,7 @@ function [d] = Model_Run(X_train, Y_train, X_test, Y_test, num_iterations, learn
 dim = size(X_train, 1);
 %Initialize parameters with zero
 [w, b] = Initialize_With_Zeros(dim);
+%[w, b] = Initialize_With_Random(dim);
 
 %Perform Gradient Descent
 [parameters, grads, costs] = Optimize(w, b, X_train, Y_train, num_iterations, learning_rate, print_cost);
@@ -28,8 +29,8 @@ b = parameters('b');
 Y_prediction_test = Predict(w, b, X_test);
 Y_prediction_train = Predict(w, b, X_train);
 
-train_accuracy = double(100 - mean(abs(Y_prediction_train - Y_train)) * 100)
-test_accuracy = double(100 - mean(abs(Y_prediction_test - Y_test)) * 100)
+train_accuracy = double(100.0 - mean(abs(double(Y_prediction_train) - double(Y_train))) * 100.0)
+test_accuracy = double(100.0 - mean(abs(double(Y_prediction_test) - double(Y_test))) * 100.0)
 
 keySet = {'costs', 'Y_prediction_test', 'Y_prediction_train', 'w', 'b', 'learning_rate', 'num_iterations'};
 valueSet = {costs, Y_prediction_test, Y_prediction_train, w, b, learning_rate, num_iterations};
